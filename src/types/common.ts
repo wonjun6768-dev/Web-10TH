@@ -2,7 +2,6 @@ export type CommonResponse<T> = {
   status: boolean;
   statusCode: number;
   message: string;
-<<<<<<< HEAD
   data: T;
 };
 
@@ -20,7 +19,4 @@ export interface PaginationDto {
   limit?: number;
   order?: 'asc' | 'desc';
   search?: string;
-=======
-  data: T
->>>>>>> upstream/체컵/고원준
 }

@@ -4,7 +4,11 @@ import useLogoutMutation from "../hooks/mutations/useLogoutMutation.ts";
 import { useQuery } from "@tanstack/react-query";
 import { getMyInfo } from "../apis/auth";
 
-const Navbar = () => {
+interface NavbarProps {
+  onMenuClick: () => void;
+}
+
+const Navbar = ({ onMenuClick }: NavbarProps) => {
   const { accessToken } = useAuth();
   const { mutate: logout, isPending } = useLogoutMutation();
   const { data: myInfo } = useQuery({ queryKey: ["myInfo"], queryFn: getMyInfo, enabled: Boolean(accessToken) });
@@ -12,12 +16,30 @@ const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-10">
       <div className="flex items-center justify-between p-4">
-        <Link
-          to="/"
-          className="text-xl font-bold text-gray-900 dark:text-white"
-        >
-          체컵
-        </Link>
+        <div className="flex items-center gap-3">
+          {/* 햄버거 메뉴 버튼 */}
+          <button
+            onClick={onMenuClick}
+            className="p-1 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+            aria-label="메뉴 열기"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <Link
+            to="/"
+            className="text-xl font-bold text-gray-900 dark:text-white"
+          >
+            체컵
+          </Link>
+        </div>
         <div className="flex items-center gap-5">
           {!accessToken && (
             <>

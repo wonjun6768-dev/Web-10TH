@@ -11,12 +11,9 @@ importers:
       '@prisma/client':
         specifier: ^7.6.0
         version: 7.6.0(prisma@7.6.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@6.0.2))(typescript@6.0.2)
-<<<<<<< HEAD
       '@tanstack/react-query':
         specifier: ^5.100.9
         version: 5.100.9(react@19.2.4)
-=======
->>>>>>> upstream/체컵/고원준
       axios:
         specifier: ^1.15.2
         version: 1.15.2
@@ -39,12 +36,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.0
         version: 4.2.2(vite@8.0.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@24.12.2)(jiti@2.6.1))
-<<<<<<< HEAD
       '@tanstack/react-query-devtools':
         specifier: ^5.100.9
         version: 5.100.9(@tanstack/react-query@5.100.9(react@19.2.4))(react@19.2.4)
-=======
->>>>>>> upstream/체컵/고원준
       '@types/node':
         specifier: ^24.12.2
         version: 24.12.2
@@ -516,7 +510,6 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
-<<<<<<< HEAD
   '@tanstack/query-core@5.100.9':
     resolution: {integrity: sha512-SJSFw1S8+kQ0+knv/XGfrbocWoAlT7vDKsSImtLx3ZPQmEcR46hkDjLSvynSy25N8Ms4tIEini1FuBd5k7IscQ==}
 
@@ -534,8 +527,6 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-=======
->>>>>>> upstream/체컵/고원준
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
 
@@ -1773,7 +1764,6 @@ snapshots:
       tailwindcss: 4.2.2
       vite: 8.0.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@24.12.2)(jiti@2.6.1)
 
-<<<<<<< HEAD
   '@tanstack/query-core@5.100.9': {}
 
   '@tanstack/query-devtools@5.100.9': {}
@@ -1789,8 +1779,6 @@ snapshots:
       '@tanstack/query-core': 5.100.9
       react: 19.2.4
 
-=======
->>>>>>> upstream/체컵/고원준
   '@tybys/wasm-util@0.10.1':
     dependencies:
       tslib: 2.8.1

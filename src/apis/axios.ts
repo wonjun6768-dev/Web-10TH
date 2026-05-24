@@ -9,10 +9,7 @@ let refreshPromise: Promise<string | null> | null = null;
 
 export const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_SERVER_API_URL,
-<<<<<<< HEAD
   withCredentials: true,
-=======
->>>>>>> upstream/체컵/고원준
   headers: { "Content-Type": "application/json" },
 });
 

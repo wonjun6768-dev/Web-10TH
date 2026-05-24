@@ -5,17 +5,33 @@ function useThrottle<T extends (...args: any[]) => void>(
   interval: number
 ): T {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const callbackRef = useRef(callback);
+  const trailingArgsRef = useRef<Parameters<T> | null>(null);
+
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
 
   const throttledCallback = useCallback(
     (...args: Parameters<T>) => {
       if (!timerRef.current) {
-        callback(...args);
+        // 처음 이벤트 발생 시 즉시 실행 (Leading edge)
+        callbackRef.current(...args);
+        
         timerRef.current = setTimeout(() => {
+          // 타이머가 끝났을 때, 마지막으로 들어온 인자가 있다면 한 번 더 실행 (Trailing edge)
+          if (trailingArgsRef.current) {
+            callbackRef.current(...trailingArgsRef.current);
+            trailingArgsRef.current = null;
+          }
           timerRef.current = null;
         }, interval);
+      } else {
+        // 타이머가 도는 중이라면 마지막 인자를 기억
+        trailingArgsRef.current = args;
       }
     },
-    [callback, interval]
+    [interval]
   ) as T;
 
   useEffect(() => {

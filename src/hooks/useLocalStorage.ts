@@ -1,5 +1,4 @@
 export const useLocalStorage = (key: string) => {
-<<<<<<< HEAD
   const setItem = (value: unknown) => {
     try {
       const valueToStore =
@@ -32,19 +31,6 @@ export const useLocalStorage = (key: string) => {
     } catch (error) {
       console.log(error);
     }
-=======
-  const setItem = (value: string) => {
-    localStorage.setItem(key, JSON.stringify(value));
-  };
-
-  const getItem = () => {
-    const value = localStorage.getItem(key);
-    return value ? JSON.parse(value) : null;
-  };
-
-  const removeItem = () => {
-    localStorage.removeItem(key);
->>>>>>> upstream/체컵/고원준
   };
 
   return { setItem, getItem, removeItem };
